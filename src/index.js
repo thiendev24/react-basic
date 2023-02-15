@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './assets/scss/index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Main from './main/main';
-import Car from './car/car';
+import OnchangeEvent from './onchangeEvent/OnchangeEvent';
+import Form from './form/Form';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
-    {/* <Main /> */}
-    {/* <Car /> */}
+    {/* <App /> */}
+    {/* <OnchangeEvent /> */}
+    <Form />
   </React.StrictMode>
 );
 

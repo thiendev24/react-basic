@@ -1,7 +1,7 @@
 import logo from './assets/images/logo.svg';
 import './assets/scss/App.scss';
 
-function App() {
+function Form() {
   return (
     <div className="App">
       <header className="App-header">
@@ -22,4 +22,4 @@ function App() {
   );
 }
 
-export default App;
+export default Form;
