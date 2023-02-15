@@ -1,8 +1,14 @@
 import React from 'react';
+import FormChild from './FormChild';
 class Form extends React.Component {
     state = {
         fname: '',
-        lname: ''
+        lname: '',
+        arrayUsers: [
+            { id: 1, name: 'Ronaldo', email: 'ronaldo@gmail.com' },
+            { id: 2, name: 'Messi', email: 'messi@gmail.com' },
+            { id: 3, name: 'Beckham', email: 'beck@gmail.com' }
+        ]
     }
 
     handleChangeFirstName = (event) => {
@@ -59,6 +65,11 @@ class Form extends React.Component {
                         >Submit</button>
                     </form>
                 </div>
+                <FormChild
+                    name={'thien'}
+                    email={'thien@gmail.com'}
+                    arrayUsers={this.state.arrayUsers}
+                />
             </>
         )
     }
