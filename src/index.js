@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router } from "react-router-dom";
+
 import './assets/scss/index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import OnchangeEvent from './onchangeEvent/OnchangeEvent';
-import Form from './form/Form';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
-    {/* <OnchangeEvent /> */}
-    {/* <Form /> */}
+    <Router>
+      <App />
+    </Router>
   </React.StrictMode>
 );
 

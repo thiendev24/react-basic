@@ -23,12 +23,4 @@ class OnchangeEvent extends React.Component {
     }
 }
 
-// function OnchangeEvent() {
-//     return (
-//         <div>
-//             <h1></h1>
-//         </div>
-//     );
-// }
-
 export default OnchangeEvent;

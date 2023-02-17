@@ -1,9 +1,9 @@
 import React from 'react';
 import FormChild from './FormChild';
+import FormComponent from './FormComponent';
+
 class Form extends React.Component {
     state = {
-        fname: '',
-        lname: '',
         arrayUsers: [
             { id: 1, name: 'Ronaldo', email: 'ronaldo@gmail.com' },
             { id: 2, name: 'Messi', email: 'messi@gmail.com' },
@@ -11,64 +11,33 @@ class Form extends React.Component {
         ]
     }
 
-    handleChangeFirstName = (event) => {
+    addNewUser = (user) => {
+        // let currentUsers = this.state.arrayUsers;
+        // currentUsers.push(user)
         this.setState({
-            fname: event.target.value
+            // arrayUsers: currentUsers
+            arrayUsers: [...this.state.arrayUsers, user]
         })
     }
 
-    handleChangeLastName = (event) => {
+    deleteUser = (user) => {
+        let currentUsers = this.state.arrayUsers;
+        currentUsers = currentUsers.filter(item => item.id !== user.id);
         this.setState({
-            lname: event.target.value
+            arrayUsers: currentUsers
         })
-    }
-
-    handleSubmit = () => {
-        console.log(this.state);
     }
     render() {
         return (
             <>
-                <div className="container mt-3">
-                    <h2>Stacked form</h2>
-                    <form>
-                        <div className="mb-3 mt-3">
-                            <label htmlFor="fname">First Name:</label>
-                            <input
-                                type="text"
-                                id="fname"
-                                className="form-control"
-                                placeholder="Enter First Name"
-                                value={this.state.fname}
-                                onChange={(event) => { this.handleChangeFirstName(event) }}
-                            />
-                        </div>
-                        <div className="mb-3">
-                            <label htmlFor="lname">Last Name:</label>
-                            <input
-                                type="text"
-                                id="lname"
-                                className="form-control"
-                                placeholder="Enter Last Name"
-                                value={this.state.lname}
-                                onChange={(event) => { this.handleChangeLastName(event) }} />
-                        </div>
-                        <div className="form-check mb-3">
-                            <label htmlFor="remember" className="form-check-label">
-                                <input className="form-check-input" type="checkbox" id="remember" /> Remember me
-                            </label>
-                        </div>
-                        <button
-                            type="button"
-                            className="btn btn-primary"
-                            onClick={() => this.handleSubmit()}
-                        >Submit</button>
-                    </form>
-                </div>
+                <FormComponent
+                    addNewUser={this.addNewUser}
+                />
                 <FormChild
                     name={'thien'}
                     email={'thien@gmail.com'}
                     arrayUsers={this.state.arrayUsers}
+                    deleteUser={this.deleteUser}
                 />
             </>
         )
