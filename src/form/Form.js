@@ -12,8 +12,6 @@ class Form extends React.Component {
     }
 
     addNewUser = (user) => {
-        // let currentUsers = this.state.arrayUsers;
-        // currentUsers.push(user)
         this.setState({
             // arrayUsers: currentUsers
             arrayUsers: [...this.state.arrayUsers, user]

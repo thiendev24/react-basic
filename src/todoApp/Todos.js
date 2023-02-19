@@ -1,5 +1,5 @@
 import React from "react";
-// import './assets/scss/todos.scss';
+
 import './todos.scss'
 import 'bootstrap/dist/css/bootstrap.css';
 import AddTodo from './AddTodo'

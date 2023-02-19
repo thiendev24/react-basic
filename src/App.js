@@ -1,26 +1,29 @@
 import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
-import logo from './assets/images/logo.svg';
 import './assets/scss/App.scss';
 import 'react-toastify/dist/ReactToastify.css';
 import Nav from './nav/Nav';
 import Home from './home/Home';
 import Todos from './todoApp/Todos';
 import Form from './form/Form';
+import ListUsers from './listUsers/ListUsers';
+import DetailsUser from './listUsers/DetailsUser';
+import NotFound from './listUsers/NotFound'
 
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
 
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/todo" element={<Todos />} />
-          <Route path="/Form" element={<Form />} />
+          <Route path="/form" element={<Form />} />
+          <Route path='/list-users' element={<ListUsers />} />
+          <Route path='/list-users/:id' element={<DetailsUser />} />
         </Routes>
 
       </header>
